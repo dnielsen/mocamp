@@ -1,4 +1,2 @@
-mocamp
-======
-
-MobileCamp go to along with CloudCamp
+Campsite Community Edition Mobile App
+===========

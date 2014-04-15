@@ -1,0 +1,225 @@
+<!DOCTYPE html><!--HTML5 doctype-->
+<html>
+<head>
+	<title>Campsite Community</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    
+    <link rel="stylesheet" href="css/themes/campsite.min.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.2.min.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+    <script src="js/utility.js"></script>
+    <script src="js/group.js"></script>
+    <script src="js/event.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/entry.js"></script>
+    <script src="js/session.js"></script>
+    
+</head>
+<body>
+    <div id="group" data-role="page">
+
+        <div data-role="header" data-position="fixed">
+            <div class="logoBlock">
+                <img class="group-logo"/>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h3 class="group-title center"></h3>
+            <div class="group-description"></div>
+                        
+            <div class="group-entrySets" style="display:none;">
+                <h3>Collaboration Lists</h3>
+                <ul class="group-entrySet-list" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+            
+            <div class="group-upcoming-events" style="display:none;">
+                <h3>Upcoming Events</h3>
+                <ul class="group-upcoming-event-list"data-role="listview" data-inset="true">
+                </ul>
+            </div>
+            
+            <div class="group-past-events" style="display:none;">
+                <h3>Previous Events</h3>
+                <ul class="group-past-event-list" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+        </div>
+        
+        <div data-role="footer" data-position="fixed">
+            <div class="ui-grid-b footerWrapper">
+                <div class="ui-block-a left"></div>
+                <div class="ui-block-b center"></div>
+                <div class="ui-block-c right">
+                    <a href="#login" data-rel="dialog" data-transition="slideup" class="login-link ui-btn ui-btn-corner-all" style="display:none;">Login</a>
+                    <a href="#logout" data-rel="dialog" data-transition="slideup"  class="logout-link ui-btn ui-btn-corner-all" style="display:none;">Logout</a>
+                </div>                
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="login" data-role="dialog">
+        <div class="ui-content login-form">
+            <input type="text" class="username" placeholder="Email Address"></input>
+            <input type="password" class="password" placeholder="Password"></input>
+            <a href="#" class="login-submit btn">Submit</a>
+            <a href="#" class="btn" data-rel="back">Never Mind</a>
+        </div>
+    </div>
+
+    <div id="logout" data-role="dialog">
+        <div class="ui-content logout-prompt">
+            <p>Are you sure you wish to log out?</p>
+            <a href="#" class="logout-confirm btn">Yes, I'm sure</a>
+            <a href="#" class="btn" data-rel="back">Never Mind</a>
+        </div>
+    </div>
+
+    
+    <div id="event" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <div class="logoBlock">
+                <img class="event-logo"/>
+            </div>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h3 class="event-title center"></h3>
+            <a href="#event-info" data-rel="popup" data-role="button" data-transition="turn" class="event-info-button">Event Info</a>
+
+            <div data-role="popup" id="event-info" class="ui-content">
+            </div>
+            
+            <div class="event-schedule" style="display:none;">
+                <h3>Session Schedule</h3>
+                <ul class="event-schedule-list" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+            
+            <div class="event-unscheduled" style="display:none;">
+                <h3>Unscheduled Sessions</h3>
+                <ul class="event-unscheduled-list" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+            
+            <div class="event-entrySets" style="display:none;">
+                <h3>Collaboration Lists</h3>
+                <ul class="event-entrySet-list" data-role="listview" data-inset="true">
+                </ul>
+            </div>
+
+            <div class="event-description"></div>
+            
+        </div>
+    
+        <div data-role="footer" data-position="fixed">
+            <div class="ui-grid-b footerWrapper">
+                <div class="ui-block-a left"></div>
+                <div class="ui-block-b center">
+                    <a href="#group" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-icon-home" data-direction="reverse">Home</a>
+                </div>
+                <div class="ui-block-c right">
+                    <a href="#login" data-rel="dialog" data-transition="slideup" class="login-link ui-btn ui-btn-corner-all" style="display:none;">Login</a>
+                    <a href="#logout" data-rel="dialog" data-transition="slideup"  class="logout-link ui-btn ui-btn-corner-all" style="display:none;">Logout</a>
+                </div>                
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="list" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <div class="logoBlock">
+                <img class="entrySet-logo"/>
+            </div>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h3 class="entrySet-title center"></h3>
+            <div class="entrySet-description"></div>
+            
+            <div class="entrySet-entries" style="display:none;">
+                <ul class="entrySet-entry-list" data-role="listview">
+                </ul>
+            </div>
+        </div>
+    
+        <div data-role="footer" data-position="fixed">
+            <div class="ui-grid-b footerWrapper">
+                <div class="ui-block-a left upButton"></div>
+                <div class="ui-block-b center">
+                    <a href="#group" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-icon-home" data-direction="reverse">Home</a>
+                </div>
+                <div class="ui-block-c right">
+                    <a href="#login" data-rel="dialog" data-transition="slideup" class="login-link ui-btn ui-btn-corner-all" style="display:none;">Login</a>
+                    <a href="#logout" data-rel="dialog" data-transition="slideup"  class="logout-link ui-btn ui-btn-corner-all" style="display:none;">Logout</a>
+                </div>  
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="entry" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <div class="logoBlock">
+                <img class="entry-logo"/>
+            </div>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h3 class="entry-title center"></h3>
+            <div class="entry-description"></div>
+        </div>
+    
+        <div data-role="footer" data-position="fixed">
+            <div class="ui-grid-b footerWrapper">
+                <div class="ui-block-a left upButton"></div>
+                <div class="ui-block-b center">
+                    <a href="#group" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-icon-home" data-direction="reverse">Home</a>
+                </div>
+                <div class="ui-block-c right">
+                    <a href="#login" data-rel="dialog" data-transition="slideup" class="login-link ui-btn ui-btn-corner-all" style="display:none;">Login</a>
+                    <a href="#logout" data-rel="dialog" data-transition="slideup"  class="logout-link ui-btn ui-btn-corner-all" style="display:none;">Logout</a>
+                </div>  
+            </div>
+        </div>
+    </div>
+    
+    <div id="session" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <div class="logoBlock">
+                <img class="session-logo"/>
+            </div>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h3 class="session-title center"></h3>
+            <h2 class="session-time center"></h2>
+            <div class="session-description"></div>
+        </div>
+    
+        <div data-role="footer" data-position="fixed">
+            <div class="ui-grid-b footerWrapper">
+                <div class="ui-block-a left upButton"></div>
+                <div class="ui-block-b center">
+                    <a href="#group" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-icon-home" data-direction="reverse">Home</a>
+                </div>
+                <div class="ui-block-c right">
+                    <a href="#login" data-rel="dialog" data-transition="slideup" class="login-link ui-btn ui-btn-corner-all" style="display:none;">Login</a>
+                    <a href="#logout" data-rel="dialog" data-transition="slideup"  class="logout-link ui-btn ui-btn-corner-all" style="display:none;">Logout</a>
+                </div>  
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
